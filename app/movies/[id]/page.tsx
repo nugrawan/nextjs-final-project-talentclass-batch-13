@@ -72,13 +72,9 @@ export default function Detail() {
               </p>
               <div className="flex">
                 <span className="font-semibold">Genres: </span>
-                {movie.genres.map((genre: any) => (
+                {movie.genres.map((genre: { id: number; name: string }) => (
                   <p key={genre.id}>
-                    {" "}
-                    {genre.name}
-                    {movie.genres.length - 1 === movie.genres.indexOf(genre)
-                      ? " "
-                      : ", "}
+                    <span className="mx-2">{genre.name},</span>
                   </p>
                 ))}
               </div>
